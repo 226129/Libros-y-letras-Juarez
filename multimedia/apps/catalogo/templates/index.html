@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Catálogo de productos</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form action="#' %}" method="get">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Buscar producto" name="q" value="{{ request.GET.q }}">
+                    <button class="btn btn-primary" type="submit">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        {% for libro in libros %}
+        <div class="col-12 col-md-4">
+            <div class="card mb-3">
+                <img src="{{ libro.imagen.url }}" class="card-img-top" alt="{{ libro.nombre }}" onerror="this.onerror=null;this.src='/static/default.jpg';">
+                <div class="card-body">
+                    <h5 class="card-title">{{ libro.nombre }}</h5>
+                    <p class="card-text">{{ libro.descripcion }}</p>
+                    <p class="card-text"><strong>${{ libro.precio }}</strong></p>
+                    <a href="#" class="btn btn-primary">Ver detalle</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
+
+
