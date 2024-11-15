@@ -1,0 +1,9 @@
+- Carrito de compras
+- Diseño responsivo 
+- Lista de deseos 
+- Ofertas
+- Libros 
+- Crear cuenta 
+- Inicio de sesion 
+- Registro
+- Carrusel con sus imagenes, descripciones y boton de agregar al carrito
