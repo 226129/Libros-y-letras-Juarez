@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock extra_styles %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <img src="{% static 'images/logo.png' %}" alt="Libros y letras Juárez" class="img-fluid" width="300" height="300">
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">
+                {{ message }}
+            </div>      
+            {% endfor %}
+        </div>
+        <div class="col-12 col-md-6">
+            <h1>Registro</h1>
+            <form action="{% url 'signup' %}" method="POST">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="form-group mb-3">
+                    <label for="{{ form.username.id_for_label }}">Nombre de usuario</label>
+                    {{ form.username }}
+                </div>
+                <div class="form-group mb-3">
+                    <label for="{{ form.email.id_for_label }}">Correo electrónico</label>
+                    {{ form.email }}
+                </div>
+                <div class="form-group mb-3">
+                    <label for="{{ form.telefono.id_for_label }}">Teléfono</label>
+                    {{ form.telefono }}
+                </div>
+                <div class="form-group mb-3">
+                    <label for="{{ form.direccion.id_for_label }}">Dirección</label>
+                    {{ form.direccion }}
+                </div>
+                <div class="form-group mb-3">
+                    <label for="{{ form.ciudad.id_for_label }}">Ciudad</label>
+                    {{ form.ciudad }}
+                </div>
+                <div class="form-group mb-3">
+                    <label for="{{ form.estado.id_for_label }}">Estado</label>
+                    {{ form.estado }}
+                </div>
+                <div class="form-group mb-3">
+                    <label for="{{ form.pais.id_for_label }}">País</label>
+                    {{ form.pais }}
+                </div>
+                <div class="form-group mb-3">
+                    <label for="{{ form.codigo_postal.id_for_label }}">Código Postal</label>
+                    {{ form.codigo_postal }}
+                </div>
+                <div class="form-group mb-3">
+                    <label for="{{ form.password1.id_for_label }}">Contraseña</label>
+                    {{ form.password1 }}
+                </div>
+                <div class="form-group mb-3">
+                    <label for="{{ form.password2.id_for_label }}">Confirmar Contraseña</label>
+                    {{ form.password2 }}
+                </div>
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

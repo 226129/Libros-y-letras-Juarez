@@ -42,6 +42,30 @@
             <a href="{% url "ayuda" %}" class="me-3">Ayuda</a>
             <a href="#perfil" class="me=3">Perfil</a>
             <a href="#carrito" class="me-3">Carrito</a>
+            {% if not user.is_authenticated %}
+            <a href="{% url 'login' %}" class="me-3">Iniciar Sesión</a>
+            <a href="{% url 'signup' %}" class="me-3">Registrarse</a>
+            {% else %}
+            <a href="{% url "logout" %}" class="me-3" data-bs-toggle="modal" data-bs-target="#logoutModal">Cerrar Sesión</a>
+            {% endif %}
         </div>
+    
     </div>
 </nav>
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutModalLabel">Confirmar Cierre de Sesión</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas cerrar sesión?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <a href="{% url 'logout' %}" class="btn btn-danger">Cerrar Sesión</a>
+            </div>
+        </div>
+    </div>
+</div>
