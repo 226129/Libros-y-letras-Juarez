@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock extra_styles %}
+
+<div class="container">
+    <h1>Pago Exitoso</h1>
+    <p>Gracias por tu compra. Tu pago ha sido procesado exitosamente.</p>
+</div>
+{% endblock content %}

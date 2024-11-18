@@ -34,6 +34,9 @@
     <div class="row my-5">
         <div class="col-12">
             <h1 class="text-center">Catálogo de productos</h1>
+            {% if not user.is_authenticated %}
+            <h3 class="text-center">Inicia sesión para agregar productos al carrito</h3>
+            {% endif %}
         </div>
     </div>
     <div class="row mt-5 my-5">
@@ -54,7 +57,19 @@
                 <div class="card-body text-center d-flex flex-column">
                     <h5 class="card-title">{{ libro.nombre }} de {{ libro.autor.nombre }}</h5>
                     <p class="card-text"><strong>${{ libro.precio }} MXN</strong></p>
-                    <button href="#" class="btn boton mt-auto">Agregar al carrito</button>
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'agregar_al_carrito' libro.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="cantidad" value="1">
+                        <button type="submit" class="btn boton mt-auto">Agregar al carrito</button>
+                    </form>
+                    {% else %}
+                    <form action="{% url 'login' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="cantidad" value="1">
+                        <button type="submit" class="btn boton mt-auto">Agregar al carrito</button>
+                    </form>
+                    {% endif %}
                 </div>
             </div>
         </div>
