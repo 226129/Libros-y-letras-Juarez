@@ -48,14 +48,14 @@
     </div>
     <div class="row">
         {% for libro in libros %}
-        <div class="col-12 col-md-4">
-            <div class="card mb-3">
-            <img src="{{ libro.imagen.url }}" class="card-img-top img-fluid" alt="{{ libro.nombre }}" style="object-fit: cover; width: 100%; height: 250px;" onerror="this.onerror=null;this.src='/static/default.jpg';">
-            <div class="card-body text-center">
-                <h5 class="card-title">{{ libro.nombre }} de {{ libro.autor.nombre }}</h5>
-                <p class="card-text"><strong>${{ libro.precio }} MXN</strong></p>
-                <button href="#" class="btn boton">Agregar al carrito</button>
-            </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch">
+            <div class="card mb-3 w-100">
+                <img src="{{ libro.imagen.url }}" class="card-img-top img-fluid" alt="{{ libro.nombre }}" style="object-fit: cover; width: 100%; height: 250px;" onerror="this.onerror=null;this.src='/static/default.jpg';">
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title">{{ libro.nombre }} de {{ libro.autor.nombre }}</h5>
+                    <p class="card-text"><strong>${{ libro.precio }} MXN</strong></p>
+                    <button href="#" class="btn boton mt-auto">Agregar al carrito</button>
+                </div>
             </div>
         </div>
         {% endfor %}

@@ -9,7 +9,7 @@ from .models import Cliente
 
 def register_view(request):
     if request.method == 'POST':
-        form = ClienteCreationForm(request, data=request.POST)
+        form = ClienteCreationForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
@@ -25,11 +25,6 @@ def register_view(request):
 
 
 def login_view(request):
-
-    if not Cliente.objects.filter(username=request.POST.get('username')).exists():
-        messages.error(request, 'El usuario no está registrado')
-        return redirect('signup')
-
     if request.method == 'POST':
         form = CustomAuthenticationForm(request, data=request.POST)
         if form.is_valid():
