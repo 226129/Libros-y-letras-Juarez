@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock extra_styles %}
+
+<div class="container md-4 mt-4 my-4">
+    <h1 class="text-center">Preguntas frecuentes</h1>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                ¿Cómo puedo buscar un libro en su página web?
+            </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Puedes usar nuestra barra de búsqueda en la parte superior de la página para encontrar libros por título, autor o género. También puedes explorar nuestras categorías destacadas en la sección de inicio.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    ¿Realizan envíos a todo el país?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    ¡Sí! Hacemos envíos a cualquier lugar dentro del país. Los costos y tiempos de entrega varían según tu ubicación y los productos seleccionados.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    ¿Cuáles son las formas de pago aceptadas?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Aceptamos pagos con tarjetas de crédito y débito, transferencias bancarias, PayPal y, en algunos casos, pagos en efectivo a través de tiendas de conveniencia.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    ¿Qué hago si no encuentro el libro que busco?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Si no encuentras el libro que buscas, puedes contactarnos a través del formulario en esta misma sección o enviarnos un mensaje en nuestras redes sociales. Haremos lo posible por conseguirlo para ti.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    ¿Qué beneficios ofrece registrarme en su página web?
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    Al registrarte, puedes guardar tus libros favoritos en una lista de deseos, recibir ofertas personalizadas y ser el primero en enterarte de nuestras promociones y lanzamientos exclusivos.                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{%  endblock content %}

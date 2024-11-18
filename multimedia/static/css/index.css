@@ -1,7 +1,18 @@
 body {
     margin: 0;
-    padding-top: 150px;
-    font-family: Arial, sans-serif;
+    padding-top: 210px;
+    font-family: poppins;
+    background-color: #f7f5f2;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins';
 }
 
 .boton {
@@ -17,7 +28,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #333;
+    background-color: #f7f5f2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,6 +39,7 @@ body {
 .navbar .social-icons a {
     margin: 0 10px;
     text-decoration: none;
+    color: black
 }
 
 .navbar .social-icons a:hover {
@@ -35,7 +47,7 @@ body {
 }
 
 .navbar .logo img {
-    height: 50px;
+    height: 100px;
 }
 
 .navbar .links a {

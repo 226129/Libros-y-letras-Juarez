@@ -9,7 +9,28 @@
 {% endblock extra_styles %}
 
 <div class="container">
-    <img src="{% static "images/1.jpg" %} " class="img-fluid" alt="Responsive image">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/1.png' %}" class="d-block w-100" alt="Imagen promocional de descuentos" style="height: 100%; max-height: 600px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/2.png' %}" class="d-block w-100" alt="Imagen promocional de descuentos" style="height: 100%; max-height: 600px; object-fit: cover;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/3.png' %}" class="d-block w-100" alt="Imagen promocional de descuentos" style="height: 100%; max-height: 600px; object-fit: cover;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
     <div class="row my-5">
         <div class="col-12">
             <h1 class="text-center">Catálogo de productos</h1>
@@ -29,7 +50,7 @@
         {% for libro in libros %}
         <div class="col-12 col-md-4">
             <div class="card mb-3">
-            <img src="{{ libro.imagen.url }}" class="card-img-top" alt="{{ libro.nombre }}" style="object-fit: cover; width: 100%; height: 250px;" onerror="this.onerror=null;this.src='/static/default.jpg';">
+            <img src="{{ libro.imagen.url }}" class="card-img-top img-fluid" alt="{{ libro.nombre }}" style="object-fit: cover; width: 100%; height: 250px;" onerror="this.onerror=null;this.src='/static/default.jpg';">
             <div class="card-body text-center">
                 <h5 class="card-title">{{ libro.nombre }} de {{ libro.autor.nombre }}</h5>
                 <p class="card-text"><strong>${{ libro.precio }} MXN</strong></p>

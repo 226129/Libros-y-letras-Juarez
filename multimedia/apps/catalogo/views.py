@@ -12,3 +12,7 @@ def index(request):
     }
 
     return render(request, 'index.html', context)
+
+
+def ayuda(request):
+    return render(request, 'ayuda.html')
