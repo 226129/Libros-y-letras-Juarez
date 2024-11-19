@@ -6,4 +6,5 @@ from django.conf import settings
 urlpatterns = [
     path('', views.index, name='index'),
     path('ayuda/', views.ayuda, name='ayuda'),
+    path('perfil', views.perfil, name='perfil'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
